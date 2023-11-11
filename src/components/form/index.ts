@@ -1,1 +1,1 @@
-export * from './DropzoneModal'
+export * from './Dropzone'

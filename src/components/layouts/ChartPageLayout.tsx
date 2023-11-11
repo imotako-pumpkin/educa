@@ -1,12 +1,12 @@
-import { Button, Heading, VStack } from '@chakra-ui/react'
+import { Button, ButtonGroup, Heading, Spacer, VStack } from '@chakra-ui/react'
 import { useMemo, useState } from 'react'
 
 import { LineChart } from '../charts'
-import { DropzoneModal } from '../form'
+import { Dropzone } from '../form'
 
 type ChartPageLayoutProps = {
   pageTitle: string
-  chartType: 'line' | 'bar' | 'pie'
+  chartType: 'line' | 'bar' | 'pie' | 'area'
   children?: React.ReactNode
 }
 
@@ -29,15 +29,22 @@ export const ChartPageLayout = (props: ChartPageLayoutProps) => {
   }, [chartType, data])
 
   return (
-    <VStack>
+    <VStack p={[10, 10, 20, 20, 20]}>
       <Heading as='h2' size='2xl'>
         {pageTitle}
       </Heading>
+      <Spacer mb={10} />
       {children}
-      {data ? chart : <DropzoneModal setData={setData} />}
-      <Button colorScheme='teal' size='md' onClick={() => setData(undefined)}>
-        RESET
-      </Button>
+      {data ? chart : <Dropzone setData={setData} />}
+      <Spacer mb={10} />
+      <ButtonGroup spacing={[10, 10, 20, 20, 20]}>
+        <Button variant='outline' colorScheme='teal' size='lg' onClick={() => setData(undefined)}>
+          RESET
+        </Button>
+        <Button colorScheme='teal' size='lg' onClick={() => setData(undefined)}>
+          FORMAT
+        </Button>
+      </ButtonGroup>
     </VStack>
   )
 }
