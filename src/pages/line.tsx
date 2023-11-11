@@ -1,7 +1,9 @@
+import { ChartPageLayout } from '@/components/layouts'
+
 export default function Line() {
   return (
-    <div>
-      <h1>Line</h1>
-    </div>
+    <>
+      <ChartPageLayout pageTitle='Line Chart' chartType='line' />
+    </>
   )
 }

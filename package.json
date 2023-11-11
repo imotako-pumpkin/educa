@@ -17,7 +17,10 @@
     "framer-motion": "^10.16.4",
     "next": "14.0.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-dropzone": "^14.2.3",
+    "recharts": "^2.9.3",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -1,7 +1,8 @@
-import { Header } from '@/components/layouts/Header'
 import '@/styles/globals.css'
-import { Container, ChakraProvider, extendTheme, Spacer } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import type { AppProps } from 'next/app'
+
+import { Header } from '@/components/layouts'
 
 const breakpoints = { sm: '30em', md: '48em', lg: '62em', xl: '80em', '2xl': '96em' }
 
