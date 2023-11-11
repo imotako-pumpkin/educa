@@ -6,13 +6,13 @@ import {
   DrawerCloseButton,
   DrawerContent,
   DrawerHeader,
+  DrawerOverlay,
+  Flex,
   IconButton,
-  useDisclosure,
+  Spacer,
   Stack,
   useColorMode,
-  Spacer,
-  Flex,
-  DrawerOverlay,
+  useDisclosure,
 } from '@chakra-ui/react'
 import { FC } from 'react'
 
@@ -66,6 +66,12 @@ const Menu: FC = () => {
               </Link>
               <Link href={'/line'} onClick={() => onClose()} fontSize='5xl'>
                 LINE
+              </Link>
+              <Link href={'/area'} onClick={() => onClose()} fontSize='5xl'>
+                AREA
+              </Link>
+              <Link href={'/bar'} onClick={() => onClose()} fontSize='5xl'>
+                BAR
               </Link>
             </Stack>
           </DrawerBody>

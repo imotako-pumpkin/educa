@@ -1,12 +1,12 @@
 import { Button, ButtonGroup, Heading, Spacer, VStack } from '@chakra-ui/react'
 import { useMemo, useState } from 'react'
 
-import { LineChart } from '../charts'
+import { AreaChart, BarChart, LineChart } from '../charts'
 import { Dropzone } from '../form'
 
 type ChartPageLayoutProps = {
   pageTitle: string
-  chartType: 'line' | 'bar' | 'pie' | 'area'
+  chartType: 'line' | 'bar' | 'area'
   children?: React.ReactNode
 }
 
@@ -22,6 +22,10 @@ export const ChartPageLayout = (props: ChartPageLayoutProps) => {
       switch (chartType) {
         case 'line':
           return <LineChart data={data} />
+        case 'area':
+          return <AreaChart data={data} />
+        case 'bar':
+          return <BarChart data={data} />
         default:
           break
       }
