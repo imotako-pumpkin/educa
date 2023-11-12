@@ -32,6 +32,13 @@ export const ChartPageLayout = (props: ChartPageLayoutProps) => {
     }
   }, [chartType, data])
 
+  const onDownload = () => {
+    const link = document.createElement('a')
+    link.download = `data_sample.xlsx`
+    link.href = './data_sample.xlsx'
+    link.click()
+  }
+
   return (
     <VStack p={[10, 10, 20, 20, 20]}>
       <Heading as='h2' size='2xl'>
@@ -45,7 +52,7 @@ export const ChartPageLayout = (props: ChartPageLayoutProps) => {
         <Button variant='outline' colorScheme='teal' size='lg' onClick={() => setData(undefined)}>
           RESET
         </Button>
-        <Button colorScheme='teal' size='lg' onClick={() => setData(undefined)}>
+        <Button colorScheme='teal' size='lg' onClick={onDownload}>
           FORMAT
         </Button>
       </ButtonGroup>
